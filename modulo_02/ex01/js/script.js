@@ -4,6 +4,6 @@ const btn = document.querySelector('#generate')
 let container = document.querySelector('#container')
 
 btn.addEventListener('click', function() {
-    container.insertAdjacentHTML('afterend', '<div id="square"></div>')
+    container.insertAdjacentHTML('afterend', '<div class="square"></div>')
     
 })
