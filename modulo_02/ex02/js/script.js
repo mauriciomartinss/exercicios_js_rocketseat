@@ -1,26 +1,38 @@
-// criar um botão que ao ser clicado, executará uma função que gera um quadrado novo
+// criar um botão que ao ser clicado, executará uma função que gera um quadrado novo e que muda cor quando a
+// setinha passar por cima deles
 
 const btn = document.querySelector('#generate') 
-const square = document.querySelector('.square')
 
 let container = document.querySelector('#container')
 
+// consegui arrumar procurando na internet, com resoluções de exercícios semelhantes. mas básicamente os erros
+// era: não ter colocado o event listener que ia trocar a cor dentro da função e, criar a variável 'square'
+// de forma que ele pegava os valores (que não existiam) no html que resultava um erro.
+
 btn.addEventListener('click', function() {
-    container.insertAdjacentHTML('afterend', '<div class="square" onmouseover="getRandomColor()"></div>')
-})
+    let square = document.createElement('div')
 
-
-function getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return (
+    square.style.width = '100px'
+    square.style.height = '100px'
+    square.style.display = 'inline-block'
+    square.style.backgroundColor = 'red'
+    square.style.margin = '20px'
+    
+// essa função foi disponibilizada pelo exercício
+    square.addEventListener('mouseover', function() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+    
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
         console.log(color),
         square.style.backgroundColor = color
-    )
-}
+        btn.style.backgroundColor = color
+        
+        
+    })
 
-// vou ter que revisar essa parte dos vídeo!
-
+    container.appendChild(square)
+    
+})
