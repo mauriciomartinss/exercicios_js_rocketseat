@@ -5,9 +5,9 @@ const btn = document.querySelector('#generate')
 
 let container = document.querySelector('#container')
 
-// consegui arrumar procurando na internet, com resoluções de exercícios semelhantes. mas básicamente os erros
-// era: não ter colocado o event listener que ia trocar a cor dentro da função e, criar a variável 'square'
-// de forma que ele pegava os valores (que não existiam) no html que resultava um erro.
+// consegui arrumar usando resoluções de exercícios semelhantes. mas, básicamente, os erros
+// eram: não ter colocado o event listener que ia trocar a cor dentro da função, e criar a variável 'square'
+// de forma que ele pegasse os valores (que não existiam) no html que resultava um erro (era null).
 
 btn.addEventListener('click', function() {
     let square = document.createElement('div')
